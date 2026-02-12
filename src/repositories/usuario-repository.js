@@ -19,7 +19,7 @@ export class UsuarioRepository {
 
         const [result] = await connection.query('INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)', [nome, email, senha])
 
-        return new Usuario(result.insertId, result.nome, result.email, result.senha)
+        return new Usuario(result.insertId, nome, email, senha)
     }
 
     static async atualizarUsuario(id, usuario) {
