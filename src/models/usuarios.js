@@ -1,3 +1,5 @@
+
+// Exportador do modelo de algum cadastro
 export class Usuario {
     constructor(id,nome,email,senha) {
     this.id = id

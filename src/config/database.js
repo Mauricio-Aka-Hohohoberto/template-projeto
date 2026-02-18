@@ -1,5 +1,7 @@
 import mysql from 'mysql2/promise'
-import {DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_DATABASE} from './envconfig.js'
+import {DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_DATABASE} from './env-config.js'
+
+// Exportador da Data que fará conexão com o banco
 export const connection = mysql.createPool({
     host: DB_HOST,
     port: parseInt(DB_PORT || '3306'),

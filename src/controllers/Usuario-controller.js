@@ -1,36 +1,38 @@
 import { Usuario } from "../models/usuarios.js";
 import { UsuarioRepository } from "../repositories/usuario-repository.js";
+import { UsuarioService } from "../Service/service.js"
 
+
+// Exportador da efetuação e Verificação da ação
 
 export class UsuarioController {
     static async Index(req, res) {
-        const usuarios = await UsuarioRepository.buscarTodos()
+
+        const usuarios = await UsuarioService.exibirUsuarios()
         res.status(200).json(usuarios);
     }
     static async IndexId(req, res) {
+
         const id = parseInt(req.params.id)
-        const usuario = await UsuarioRepository.buscarPorId(id)
-
-        if(!usuario) {
-            res.status(404).send('Usuário não encontrado');
-            return;
-        }
-
+        const usuario = await UsuarioService.exibirUsuario(id)
         res.status(200).json(usuario)
+
     }
-
-    static async Register(req, res) {
-        const { nome, email, senha } = req.body;
+    static async login(req, res) {
+        const { email, senha } = req.body
         
-        if (!nome || !email || !senha) {
-            res.status(400).send('Todos os campos são obrigatórios!')
-            return;
-        }
+        const usuariologado = await UsuarioService.login(email, senha)
 
-        const usuario = new Usuario(null, nome, email, senha);
-        const registro = await UsuarioRepository.inserirUsuario(usuario);
+            res.status(200).json({ message: 'Usuario logado com sucesso!'})
 
-        res.status(201).json(registro);
+    }
+    static async Register(req, res) {
+
+        const { nome, email, senha } = req.body;
+        const novoUsuario = await UsuarioService.registrarUsuario(nome, email, senha)
+        res.status(201).json(novoUsuario)
+
+
     }
     static async Update(req, res) {
         const id = parseInt(req.params.id);
