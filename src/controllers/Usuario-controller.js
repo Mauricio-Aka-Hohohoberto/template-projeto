@@ -21,9 +21,9 @@ export class UsuarioController {
     static async login(req, res) {
         const { email, senha } = req.body
         
-        const usuariologado = await UsuarioService.login(email, senha)
+        const token = await UsuarioService.login(email, senha)
 
-            res.status(200).json({ message: 'Usuario logado com sucesso!'})
+            res.status(200).json({ token })
 
     }
     static async Register(req, res) {
@@ -35,27 +35,16 @@ export class UsuarioController {
 
     }
     static async Update(req, res) {
-        const id = parseInt(req.params.id);
+        const id = req.params.id
         const { nome, email, senha } = req.body;
-        const usuario = new Usuario(id, nome, email, senha);
-        const atualizar = await UsuarioRepository.atualizarUsuario(id, usuario)
 
-        if (!atualizar) {
-            res.status(404).send('Usuário não encontrado')
-            return;
-        }
+        const atualizar = await UsuarioService.update(id, nome, email, senha)
 
         res.status(200).json(atualizar)
     }
     static async Delete(req, res) {
         const id = parseInt(req.params.id);
-        const del = await UsuarioRepository.excluirUsuario(id);
-
-        if (!del) {
-            res.status(404).send('Usuário não encontrado')
-            return;
-        }
-
-        res.status(200).json(del)
+        await UsuarioService.delete(id)
+        res.status(200).send()
     }
 }
