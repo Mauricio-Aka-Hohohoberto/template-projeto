@@ -34,10 +34,10 @@ body {
 #headerAll {
     height: 60px;
     width: 100%;
+    background-color: #364466;
 }
 #footerAll {
     height: 45px;
     width: 100%;
-    position: fixed;
-    bottom: 0;
+    background-color: #191e29;
 }
