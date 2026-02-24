@@ -27,17 +27,46 @@
 }
 
 body {
-    background: var(--cor-fundo);
-    color: var(--cor-texto);
+
 }
 
 #headerAll {
-    height: 60px;
-    width: 100%;
-    background-color: #364466;
+  height: 108px;
+  width: 100%;
+  background-color: #0f172a;
 }
-#footerAll {
-    height: 45px;
-    width: 100%;
-    background-color: #191e29;
+#navAll {
+  height: 58px;
+  width: 100%;
+  background-color: #4f46e5;
+}
+#mainAll {
+  height: fit-content;
+  max-width: 100%;
+  background-color: aliceblue;
+  display: flex;
+  flex-flow: wrap;
+}
+#footerALl {
+  height: 42px;
+  width: 100%;
+  background-color: rgb(212, 224, 235);
+}
+#asideAll {
+  background-color: rgb(175, 168, 212);
+  max-height: 100%;
+  width: 25%;
+}
+#sectionAll {
+  height: 500px;
+  width: 75%;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#articleAll {
+  background-color: aqua;
+  width: fit-content;
+  height: 250px;
 }

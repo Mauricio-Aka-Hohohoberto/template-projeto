@@ -1,9 +1,0 @@
-#main {
-    width: 450px;
-    height: 750px;
-}
-#divLoginRegister {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
