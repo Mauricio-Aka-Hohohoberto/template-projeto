@@ -4,27 +4,6 @@
     box-sizing: 100%;
 }
 
-:root {
-    --cor-primaria:#4f46e5;
-    --cor-secundaria:#64748b;
-    --espacamento:16px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --cor-primaria: #0ea5e9;
-    --cor-fundo: #0f172a;
-    --cor-texto: #e2e8f0;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --cor-primaria: #2563eb;
-    --cor-fundo: #f1f5f9;
-    --cor-texto: #0f172a;
-  }
-}
 @media (min-width: 1024px) and (min-aspect-ratio: 16/9) {
   .Layout {
     grid-template-columns: 2fr 1fr;
@@ -32,7 +11,7 @@
 }
 
 body {
-  min-height: 100%;
+  height: 1080px;
   width: 100%;
   background-color: #090c14af;
 }
