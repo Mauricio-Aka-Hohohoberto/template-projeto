@@ -1,5 +1,9 @@
-#LoginAndRegister {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.sectionRegister {
+    height: 60vh;
+}
+.articleRegister{
+
+
+}
+.formRegister {
 }

@@ -25,48 +25,44 @@
     --cor-texto: #0f172a;
   }
 }
+@media (min-width: 1024px) and (min-aspect-ratio: 16/9) {
+  .Layout {
+    grid-template-columns: 2fr 1fr;
+  }
+}
 
 body {
-
+  min-height: 100%;
+  width: 100%;
+  background-color: #090c14af;
 }
 
 #headerAll {
-  height: 108px;
+  height: 8vh;
   width: 100%;
   background-color: #0f172a;
 }
 #navAll {
-  height: 58px;
+  height: 4vh;
   width: 100%;
   background-color: #4f46e5;
 }
 #mainAll {
   height: fit-content;
-  max-width: 100%;
-  background-color: aliceblue;
-  display: flex;
-  flex-flow: wrap;
+  width: 100%;
 }
 #footerALl {
-  height: 42px;
+  height: 28vh;
   width: 100%;
   background-color: rgb(212, 224, 235);
 }
 #asideAll {
   background-color: rgb(175, 168, 212);
-  max-height: 100%;
-  width: 25%;
+
 }
 #sectionAll {
-  height: 500px;
-  width: 75%;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
-  align-items: center;
+  background-color: rgb(227, 234, 240);
 }
 #articleAll {
   background-color: aqua;
-  width: fit-content;
-  height: 250px;
 }
